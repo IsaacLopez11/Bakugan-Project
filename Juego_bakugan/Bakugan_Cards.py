@@ -10,10 +10,11 @@ class Bakugan:
     
     #Añadir puntos de la carta de poder
     def add_points(self, power_card):
-        for atributo, points in power_card.items():
+        self.power_card = power_card
+    # Recorre las claves (atributos) del diccionario power_card
+        for atributo, valor in power_card.items():
             if atributo == self.atribute:
-                self.force_g += points
-        return self.force_g
+                self.force_g += valor
     
     #imprimir el objeto
     def __str__(self):
@@ -66,6 +67,7 @@ bakugan1 = Bakugan("Drago", 450, "Fuego")
 #card1, card2, card3, card4 = power_card(atributes, points)
 
 cardO = Power_card(atributes, points).create_card()
+print(cardO)
 bakugan1.add_points(cardO)
 print(bakugan1)
 

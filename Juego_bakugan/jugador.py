@@ -30,7 +30,10 @@ class Player:
             return self.power_cards[2]
         
 #Elegir Bakugan
-    def choice_bakugan(self):
+    def choice_bakugan(self, opc):
+        
+        self.opc = opc
+
         if self.opc == 1:
             return self.bakugans[0]
         elif self.opc == 2:

@@ -1,4 +1,4 @@
-import battle
+import battle as Battle
 import Bakugan_Cards as b
 import jugador as ply
 import Campo as camp
@@ -32,11 +32,12 @@ class Interface_game:
             mazo_bakugans =[bakugan1, bakugan2, bakugan3]
             
         #3 Crear player y pasarle el mazo y los bakugans
-            power_card1 = power_card.create_card(),
-            power_card2 = power_card.create_card(),
+            power_card1 = power_card.create_card()
+            power_card2 = power_card.create_card()
             power_card3 = power_card.create_card()
             mazo_power_card = [power_card1,power_card2,power_card3 ]
 
+            print(mazo_power_card)
             #cartas portal
             portal_card = b.Portal_card(atributes, points)
             
@@ -50,7 +51,12 @@ class Interface_game:
             player1 = ply.Player("Isaac",mazo_portal_card, mazo_power_card, mazo_bakugans )
             cpu = ply.CPU_Player("Mascarade",mazo_portal_card, mazo_power_card, mazo_bakugans)
             
-
+            party = Battle.Party(player1, cpu)
+            party.start_party()
+""" 
+            EN TODO ESTE CODIGO LO QUE HAGO ES QUE EL CPU Y EL JUGADOR ELIJAN UNA POSICION EN EL CAMPO
+            POR CUESTION DE TIEMPO INTENTARÉ QUE SOLO SE REALIZEN LAS BATALLAS
+            
             #imprimir carta portal del jugador
             print(player1.portal_cards)
 
@@ -69,14 +75,13 @@ class Interface_game:
             
             campo.verify_position(portal_card_choiced_CPU, cpu_position_choiced )
             
-            
+            """
             # print(portal_card_choiced_CPU)
             
 
 
 
-
-            print(campo)
+            # print(campo)
         #iniciar partida
         #batallar
 start = Interface_game
