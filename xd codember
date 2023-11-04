@@ -1,0 +1,13 @@
+def contar_palabras(lista):
+      lista = lista.split()
+
+      resultado = {}
+      for palabra in lista:
+        if palabra in resultado:
+          resultado[palabra] += 1
+        else:
+          resultado[palabra] = 1
+      return resultado
+
+
+print(contar_palabras(""))
